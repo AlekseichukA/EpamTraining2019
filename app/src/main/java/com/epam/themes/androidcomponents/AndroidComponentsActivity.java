@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.themes.androidcomponents;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -10,11 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.epam.cleancodetest.R;
-import com.epam.activities.AActivity;
-import com.epam.activities.BActivity;
-import com.epam.activities.CActivity;
+import com.epam.themes.androidcomponents.activities.AActivity;
+import com.epam.themes.androidcomponents.activities.BActivity;
+import com.epam.themes.androidcomponents.activities.CActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class AndroidComponentsActivity extends AppCompatActivity {
 
     private Intent mIntent;
     private Intent mBroadcastIntent = new Intent("com.epam.CUSTOM_ACTION");
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        setTitle(R.string.theme_android_components);
 
         mIntent = new Intent(this, SimpleService.class);
 
@@ -59,21 +61,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.startAActivityView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                startActivity(new Intent(MainActivity.this, AActivity.class));
+                startActivity(new Intent(AndroidComponentsActivity.this, AActivity.class));
             }
         });
 
         findViewById(R.id.startBActivityView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                startActivity(new Intent(MainActivity.this, BActivity.class));
+                startActivity(new Intent(AndroidComponentsActivity.this, BActivity.class));
             }
         });
 
         findViewById(R.id.startCActivityView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                startActivity(new Intent(MainActivity.this, CActivity.class));
+                startActivity(new Intent(AndroidComponentsActivity.this, CActivity.class));
             }
         });
     }
